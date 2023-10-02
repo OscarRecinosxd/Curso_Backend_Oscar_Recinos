@@ -10,11 +10,13 @@ public class Main {
         mamiferos[4] = new Perro("Domestico",0.60f,1.0f,20.0f,"dogus","canela",1.0f,25);
 
         for (Mamifero mamifero : mamiferos) {
+            System.out.println("--------------------------------------------------------------------------------------------------");
             System.out.println(mamifero.comer());
             System.out.println(mamifero.dormir());
             System.out.println(mamifero.correr());
             System.out.println(mamifero.comunicarse());
             System.out.println(mamifero.toString());
+            System.out.println("--------------------------------------------------------------------------------------------------");
             System.out.println();
         }
     }
