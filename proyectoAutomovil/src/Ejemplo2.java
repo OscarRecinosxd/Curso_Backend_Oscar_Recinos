@@ -51,7 +51,7 @@ public class Ejemplo2 {
             case "Subaru" -> System.out.println("Auto subaru");
             case "Mazda" ->  System.out.println("Auto Mazda");
             case "Nissan" -> System.out.println("Auto Nissan");
-            case "Susuzi" -> System.out.println("Auto Susuzi");
+            case "Suzuki" -> System.out.println("Auto Suzuki");
         }
 
         System.out.println(auto.verDetalle());
