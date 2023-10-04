@@ -20,8 +20,8 @@ public class Main {
                 "Jujutsu","National","Gojou Satoru"));
 
 
-        productos.forEach(e -> {
-            System.out.println(e.toString());
+        productos.forEach(producto -> {
+            System.out.println(producto.toString());
             System.out.println();
             }
         );
