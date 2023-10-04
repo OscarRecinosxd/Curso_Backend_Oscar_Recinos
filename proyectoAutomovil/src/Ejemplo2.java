@@ -64,9 +64,6 @@ public class Ejemplo2 {
         if(auto.getTanque()!=null){
             System.out.println(auto.getTanque().toString());
         }
-        if(auto.getRuedas() !=null){
-            System.out.println(auto.getRuedas().toString());
-        }
         System.out.println("-------------------------------------------------------");
     }
 }
