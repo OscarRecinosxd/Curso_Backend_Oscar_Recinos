@@ -36,7 +36,10 @@ public class Ejemplo2 {
                 Color.GRIS,new Motor(3.5,TipoMotor.GASOLINA), new Tanque(50));
         nissan2.setConductor(patricio);
 
-        List<Automovil> autos = new ArrayList<>(Arrays.asList(subaru,mazda,nissan,nissan2));
+        Automovil susuzi = new Automovil("Suzuki","D4",
+                Color.GRIS,new Motor(3.6,TipoMotor.DIESEL));
+
+        List<Automovil> autos = new ArrayList<>(Arrays.asList(subaru,mazda,nissan,nissan2,susuzi));
         System.out.println("--------------------------------------------------------------");
         autos.forEach(Ejemplo2::imprimirDetalle);
 
@@ -44,6 +47,13 @@ public class Ejemplo2 {
     }
 
     public static void imprimirDetalle(Automovil auto){
+        switch (auto.getFabricante()){
+            case "Subaru" -> System.out.println("Auto subaru");
+            case "Mazda" ->  System.out.println("Auto Mazda");
+            case "Nissan" -> System.out.println("Auto Nissan");
+            case "Susuzi" -> System.out.println("Auto Susuzi");
+        }
+
         System.out.println(auto.verDetalle());
         if (auto.getMotor()!=null){
             System.out.println(auto.getMotor().toString());
