@@ -41,6 +41,7 @@ public class Ejemplo2 {
 
         List<Automovil> autos = new ArrayList<>(Arrays.asList(subaru,mazda,nissan,nissan2,susuzi));
         System.out.println("--------------------------------------------------------------");
+
         autos.forEach(Ejemplo2::imprimirDetalle);
 
 
@@ -52,6 +53,7 @@ public class Ejemplo2 {
             case "Mazda" ->  System.out.println("Auto Mazda");
             case "Nissan" -> System.out.println("Auto Nissan");
             case "Suzuki" -> System.out.println("Auto Suzuki");
+            default -> System.out.println("Marca no asociada");
         }
 
         System.out.println(auto.verDetalle());
