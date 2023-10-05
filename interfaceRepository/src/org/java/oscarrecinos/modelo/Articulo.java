@@ -1,6 +1,6 @@
 package org.java.oscarrecinos.modelo;
 
-public class Articulo extends Tabla{
+public class Articulo {
     private Integer id;
     private String titulo;
     private String editorial;

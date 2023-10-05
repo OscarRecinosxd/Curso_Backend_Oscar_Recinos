@@ -1,4 +1,4 @@
-package org.java.oscarrecinos.repositorio;
+package org.java.oscarrecinos.interfaces.repositorio;
 
 public interface OrdenablePaginableCrudRepositorio extends OrdenableRepositorio,PaginableRepositorio,
         CrudRepositorio,ContableRepositorio{

@@ -2,7 +2,7 @@ package org.java.oscarrecinos.modelo;
 
 import java.util.Objects;
 
-public class Cliente extends Tabla{
+public class Cliente {
     private Integer id;
     private String nombre;
     private String apellido;

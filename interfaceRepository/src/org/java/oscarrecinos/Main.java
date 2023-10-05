@@ -1,14 +1,17 @@
 package org.java.oscarrecinos;
 
+import org.java.oscarrecinos.modelo.Articulo;
 import org.java.oscarrecinos.modelo.Cliente;
 import org.java.oscarrecinos.repositorio.ClienteListRepositorio;
 import org.java.oscarrecinos.repositorio.Direccion;
 import org.java.oscarrecinos.repositorio.OrdenablePaginableCrudRepositorio;
+import org.java.oscarrecinos.repositorio.articulo.ArticuloListRepositorio;
 
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        /*
         OrdenablePaginableCrudRepositorio repo = new ClienteListRepositorio();
         repo.crear(new Cliente("Jano","Perez"));
         repo.crear(new Cliente("Bea","Gonzales"));
@@ -40,5 +43,21 @@ public class Main {
         repo.listar().forEach(System.out::println);
         System.out.println("===========total============");
         System.out.println("Total registros: "+repo.total());
+        */
+
+        ArticuloListRepositorio lista = new ArticuloListRepositorio();
+        lista.crear(new Articulo(1,"Jujutsu","General"));
+        lista.crear(new Articulo(2,"Zero","Mundo"));
+
+        System.out.println("Listar");
+        lista.listar().forEach(System.out::println);
+        System.out.println("Por id");
+        System.out.println(lista.porId(1));
+        System.out.println("Borrar");
+        lista.eliminar(1);
+        System.out.println(lista.listar());
+        System.out.println("Editar");
+        lista.editar(new Articulo(2,"Editado","Editado"));
+        System.out.println(lista.listar());
     }
 }

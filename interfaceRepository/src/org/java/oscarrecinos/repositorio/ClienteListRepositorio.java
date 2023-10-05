@@ -1,4 +1,4 @@
-package org.java.oscarrecinos.repositorio;
+package org.java.oscarrecinos.interfaces.repositorio;
 
 import org.java.oscarrecinos.modelo.Cliente;
 
