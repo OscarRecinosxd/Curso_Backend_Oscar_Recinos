@@ -1,5 +1,7 @@
 package org.java.oscarrecinos.interfaces.repositorio.lista;
 
+
+import org.java.oscarrecinos.interfaces.modelo.Cliente;
 import org.java.oscarrecinos.interfaces.modelo.Producto;
 import org.java.oscarrecinos.interfaces.repositorio.AbstractaListRepositorio;
 import org.java.oscarrecinos.interfaces.repositorio.Direccion;
@@ -7,20 +9,23 @@ import org.java.oscarrecinos.interfaces.repositorio.Direccion;
 import java.util.ArrayList;
 import java.util.List;
 
-
-public class ProductoListRepositorio extends AbstractaListRepositorio<Producto> {
+public class ClienteListRepositorio extends AbstractaListRepositorio<Cliente> {
+    private List<Cliente> dataSource;
+    public ClienteListRepositorio(){
+        this.dataSource = new ArrayList<>();
+    }
 
 
     @Override
-    public void editar(Producto producto) {
-        Producto p = porId(producto.getId());
-        p.setDescripcion(producto.getDescripcion());
-        p.setPrecio(producto.getPrecio());
+    public void editar(Cliente cliente) {
+        Cliente c = porId(cliente.getId());
+        c.setNombre(cliente.getNombre());
+        c.setApellido(cliente.getApellido());
     }
 
     @Override
-    public List<Producto> listar(String campo, Direccion dir) {
-        List<Producto> listaOrdenada = new ArrayList<>(this.dataSource);
+    public List<Cliente> listar(String campo, Direccion dir) {
+        List<Cliente> listaOrdenada = new ArrayList<>(this.dataSource);
         listaOrdenada.sort((a,b) -> {
             int resultado = 0;
             if (dir == Direccion.ASC){
@@ -32,13 +37,15 @@ public class ProductoListRepositorio extends AbstractaListRepositorio<Producto> 
         });
         return listaOrdenada;
     }
-    public static int ordenar(String campo, Producto a, Producto b){
+
+    public static int ordenar(String campo, Cliente a, Cliente b){
         int resultado = 0;
         switch (campo){
             case "id" -> resultado = a.getId().compareTo(b.getId());
-            case "descripcion" -> resultado = a.getDescripcion().compareTo(b.getDescripcion());
-            case "precio" -> resultado = a.getPrecio().compareTo(b.getPrecio());
+            case "nombre" -> resultado = a.getNombre().compareTo(b.getNombre());
+            case "apellido" -> resultado = a.getApellido().compareTo(b.getApellido());
         }
         return resultado;
     }
+
 }

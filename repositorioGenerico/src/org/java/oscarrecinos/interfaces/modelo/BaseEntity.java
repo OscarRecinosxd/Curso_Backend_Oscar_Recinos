@@ -7,7 +7,7 @@ public class BaseEntity {
     private static int ultimoId;
 
     public BaseEntity() {
-        this.id = +ultimoId;
+        this.id = ++ultimoId;
     }
 
     public Integer getId() {
