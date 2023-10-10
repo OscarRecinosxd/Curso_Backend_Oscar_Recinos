@@ -1,11 +1,11 @@
-package org.oscarrecinos.repositories;
+package org.oscarrecinos.project.repositories;
 
 import jakarta.persistence.EntityManager;
-import org.oscarrecinos.entity.Cliente;
+import org.oscarrecinos.project.entity.Cliente;
 
 import java.util.List;
 
-public class ClienteRepository implements CrudRepository<Cliente>{
+public class ClienteRepository implements CrudRepository<Cliente> {
     private EntityManager em;
 
     public ClienteRepository(EntityManager em) {
