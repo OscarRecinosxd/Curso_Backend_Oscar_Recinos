@@ -51,6 +51,27 @@ public class Cliente {
         this.formaPago = formaPago;
     }
 
+    public Cliente addFactura(Factura factura){
+        this.facturas.add(factura);
+        factura.setCliente(this);
+        return this;
+    }
+
+    public void removeFactura(Factura factura) {
+        this.facturas.remove(factura);
+        factura.setCliente(null);
+    }
+
+    public void addDetalle(ClienteDetalle detalle) {
+        this.detalle = detalle;
+        detalle.setCliente(this);
+    }
+
+    public void removeDetalle() {
+        detalle.setCliente(null);
+        this.detalle = null;
+    }
+
     public Long getId() {
         return id;
     }
@@ -115,4 +136,10 @@ public class Cliente {
         this.detalle = detalle;
     }
 
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "nombre='" + nombre + '\'' +
+                '}';
+    }
 }

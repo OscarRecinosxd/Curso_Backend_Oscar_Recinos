@@ -78,8 +78,6 @@ public class Curso {
         return "Curso{" +
                 "id=" + id +
                 ", titulo='" + titulo + '\'' +
-                ", profesor='" + profesor + '\'' +
-                ", alumnos=" + alumnos +
-                '}';
+                ", profesor='" + profesor + '\'' ;
     }
 }

@@ -10,9 +10,7 @@ public class Direccion {
     private Long id;
     private String calle;
     private Integer numero;
-
     public Direccion() {}
-
     public Direccion(String calle, Integer numero) {
         this.calle = calle;
         this.numero = numero;
