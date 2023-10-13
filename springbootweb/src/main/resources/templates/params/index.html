@@ -11,6 +11,7 @@
 <li><a th:href="@{/params/string(texto='Que tal John!')}">/params/string?texto=Que tal John!</a></li>
 <li><a th:href="@{/params/mix-params(saludo='Cómo estás Andrés', numero=7)}">/params/mix-params?saludo=Cómo estás Andrés&numero=7</a></li>
 <li><a th:href="@{/params/mix-params-request(saludo='Cómo estás Andrés', numero=7)}">/params/mix-params-request?saludo=Cómo estás Andrés&numero=7</a></li>
+    <li><a th:href="@{/params/persona(fecha='15/09/2001', edad=22)}">Persona, enviar fecha y edad</a></li>
 </ul>
 </body>
 </html>

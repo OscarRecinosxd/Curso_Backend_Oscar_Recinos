@@ -19,4 +19,11 @@ public class EjemploParams {
                 "El saludo enviado es:" + saludo + " y el numero es " + numero);
         return "params/ver";
     }
+
+    @GetMapping("/persona")
+    public String dui(@RequestParam String fecha, @RequestParam Integer edad, Model model){
+        model.addAttribute("resultado",
+                "La fecha es:" + fecha + " y la edad es " + edad);
+        return "persona";
+    }
 }
