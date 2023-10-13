@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f340954e-0319-4112-98fb-5a888a5a0d94" name="Changes" comment="add asociaciones hibernate">
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springbootweb/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springbootweb/src/main/java/com/oscarrecinos/springbootweb/controller/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springbootweb/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springbootweb/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springbootweb/src/main/java/com/oscarrecinos/springbootweb/controller/HelloWorldController.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,6 +149,7 @@
       <workItem from="1697141758346" duration="27000" />
       <workItem from="1697141808114" duration="356000" />
       <workItem from="1697142199920" duration="18000" />
+      <workItem from="1697232318073" duration="61000" />
     </task>
     <task id="LOCAL-00001" summary="add asociaciones hibernate">
       <option name="closed" value="true" />
