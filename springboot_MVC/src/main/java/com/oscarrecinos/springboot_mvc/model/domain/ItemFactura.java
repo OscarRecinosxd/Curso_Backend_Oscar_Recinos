@@ -1,4 +1,4 @@
-package com.oscarrecinos.springboot_mvc.model;
+package com.oscarrecinos.springboot_mvc.model.domain;
 
 import com.oscarrecinos.springboot_mvc.model.domain.Producto;
 
@@ -26,4 +26,8 @@ public class ItemFactura {
     public void setCantida(Integer cantida) {
         this.cantida = cantida;
     }
+    public Integer calcularImporte() {
+        return cantida * producto.getPrecio();
+    }
+
 }

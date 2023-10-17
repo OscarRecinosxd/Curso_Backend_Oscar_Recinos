@@ -1,6 +1,6 @@
 package com.oscarrecinos.springboot_mvc;
 
-import com.oscarrecinos.springboot_mvc.model.ItemFactura;
+import com.oscarrecinos.springboot_mvc.model.domain.ItemFactura;
 import com.oscarrecinos.springboot_mvc.model.domain.Producto;
 import com.oscarrecinos.springboot_mvc.model.service.IServicio;
 import com.oscarrecinos.springboot_mvc.model.service.MiServicio;
@@ -21,13 +21,11 @@ public class AppConfig {
     }
 
     @Bean("miServicioComplejo")
-    @Primary
     public IServicio registrarMiServicioComplejo(){
         return new MiServicioComplejo();
     }
 
     @Bean("itemsFactura")
-    @Primary
     public List<ItemFactura> registrarItems(){
         Producto producto1 = new Producto("Camara sony",100);
         Producto producto2 = new Producto("Bicicleta bianchi aro 26",200);

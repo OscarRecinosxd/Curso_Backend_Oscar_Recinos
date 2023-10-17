@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/factura")
 public class FacturaController {
+
     @Autowired
     private Factura factura;
 
