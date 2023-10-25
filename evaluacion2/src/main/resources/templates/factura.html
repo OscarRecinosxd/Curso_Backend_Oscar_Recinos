@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${titulo}"></title>
+</head>
+<body>
+<h1 th:text="${titulo}"></h1>
+<h2>Detalle de la factura</h2>
+
+    <div>
+        <table>
+        <thead>
+        <tr>
+            <th>Producto</th>
+            <th>Tipo</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        <h3 th:text="${factura1.cliente}"></h3>
+        <div>
+            <tr th:each="item: ${factura1.items}">
+                <td th:text="${item.producto}"></td>
+                <td th:text="${item.producto.categoriaa}"></td>
+                <td th:text="${item.producto.precio}"></td>
+                <td th:text="${item.cantidad}"></td>
+                <td th:text="${item.calcularImporte()}"></td>
+            </tr>
+        </div>
+        </tbody>
+        </table>
+    </div>
+
+
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>Producto</th>
+            <th>Tipo</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        <h3 th:text="${factura2.cliente}"></h3>
+        <div>
+            <tr th:each="item: ${factura2.items}">
+                <td th:text="${item.producto}"></td>
+                <td th:text="${item.producto.categoriaa}"></td>
+                <td th:text="${item.producto.precio}"></td>
+                <td th:text="${item.cantidad}"></td>
+                <td th:text="${item.calcularImporte()}"></td>
+            </tr>
+        </div>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
