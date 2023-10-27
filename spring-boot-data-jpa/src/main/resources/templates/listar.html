@@ -8,7 +8,7 @@
 <div class="container py-4">
 
 	<div class="card bg-light">
-		<div class="card-header" th:text="${titulo}"></div>
+		<div class="card-header" th:text="${titulo }"></div>
 		<div class="card-body">
 
 			<h4 class="card-title">
@@ -41,8 +41,10 @@
 						   onclick="return confirm('Est s seguro que quieres eliminar?');"></a></td>
 				</tr>
 				</tbody>
-
 			</table>
+
+			<nav th:replace="paginator-nav :: paginator"></nav>
+
 		</div>
 	</div>
 </div>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Appointment</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-6">
+            <form class="form-group m-3" th:action="@{/appointment}" th:method="post">
+                <div class="form-group">
+                    <label for="day">Dia de cita</label>
+                    <input th:field="*{appointment.day}" type="date" class="form-control" id="day"  placeholder="yyyy-MM-dd">
+                    <small class="form-text text-danger"
+                           th:if="${#fields.hasErrors('appointment.day')}" th:errors="*{appointment.day}">
+                    </small>
+
+                </div>
+                <div class="form-group">
+                    <label for="time">Hora de la cita</label>
+                    <input th:field="*{appointment.time}" type="time" class="form-control" id="time"  placeholder="hh:mm:ss">
+                    <small class="form-text text-danger"
+                           th:if="${#fields.hasErrors('appointment.time')}" th:errors="*{appointment.time}">
+                    </small>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="name">Nombre</label>
+                        <input th:field="*{patient.name}" type="text" class="form-control" id="name"  placeholder="Ej. John">
+                        <small class="form-text text-danger"
+                                th:if="${#fields.hasErrors('patient.name')}" th:errors="*{patient.name}">
+                        </small>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="lastName">Apellido</label>
+                        <input th:field="*{patient.lastName}" type="text" class="form-control" id="lastName"  placeholder="Ej. Doe">
+                        <small class="form-text text-danger"
+                               th:if="${#fields.hasErrors('patient.lastName')}" th:errors="*{patient.lastName}">
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="address1">Address 1</label>
+                        <input th:field="*{address.address1}" type="text" class="form-control" id="address1"  placeholder="Ej. Col Fatima">
+                        <small class="form-text text-danger"
+                               th:if="${#fields.hasErrors('address.address1')}" th:errors="*{address.address1}">
+                        </small>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="address2">Address 2</label>
+                        <input th:field="*{address.address2}" type="text" class="form-control" id="address2"  placeholder="Ej. Pasaje 9 casa 199">
+                        <small class="form-text text-danger"
+                               th:if="${#fields.hasErrors('address.address2')}" th:errors="*{address.address2}">
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="city">Ciudad</label>
+                        <input th:field="*{address.city}" type="text" class="form-control" id="city"  placeholder="Ej. Antiguo Cuscatlan">
+                        <small class="form-text text-danger"
+                               th:if="${#fields.hasErrors('address.city')}" th:errors="*{address.city}">
+                        </small>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="region">Region</label>
+                        <input th:field="*{address.region}" type="text" class="form-control" id="region"  placeholder="Ej. Central">
+                        <small class="form-text text-danger"
+                               th:if="${#fields.hasErrors('address.region')}" th:errors="*{address.region}">
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="zip">Codigo postal</label>
+                    <input th:field="*{address.zip}" type="text" class="form-control" id="zip"  placeholder="Ej. 00012">
+                    <small class="form-text text-danger"
+                           th:if="${#fields.hasErrors('address.zip')}" th:errors="*{address.zip}">
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label for="birthday">Fecha de nacimiento </label>
+                    <input th:field="*{patient.birthday}" type="date" class="form-control" id="birthday"  placeholder="yyyy-MM-dd">
+                    <small class="form-text text-danger"
+                           th:if="${#fields.hasErrors('patient.birthday')}" th:errors="*{patient.birthday}">
+                    </small>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -26,8 +26,7 @@ public class ClienteServiceImpl implements IClienteService {
 
 	@Override
 	public Page<Cliente> findAll(Pageable pageable) {
-
-		return null;
+		return clienteDao.findAll(pageable);
 	}
 	@Override
 	@Transactional
@@ -38,7 +37,6 @@ public class ClienteServiceImpl implements IClienteService {
 	@Override
 	@Transactional(readOnly = true)
 	public Cliente findOne(Long id) {
-		// TODO Auto-generated method stub
 		return clienteDao.findById(id).orElse(null);
 	}
 
