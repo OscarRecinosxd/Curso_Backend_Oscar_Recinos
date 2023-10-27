@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -47,6 +48,17 @@ public class AppointmentController {
         return "appointmentform";
     }
 
+    @GetMapping("/getappointments")
+    public String getAppointments(Map<String, Object> model){
+        List<Appointment> appointments = appointmentService.findAll();
+
+
+        model.put("appointments",appointments);
+
+
+        return "appointmentList";
+    }
+
     @PostMapping("/appointment")
     public String saveAppointment( @Valid Address address, BindingResult addressResult,
                                    @Valid Appointment appointment,BindingResult appointmentResult,
@@ -60,14 +72,15 @@ public class AppointmentController {
 
         patientService.createPatient(patient);
         addressService.createAddress(address);
-        appointmentService.createAppointment(appointment);
 
+
+        patient.setAddress(address);
         address.setPatient(patient);
         appointment.setPatient(patient);
 
         addressService.createAddress(address);
         appointmentService.createAppointment(appointment);
-
+        patientService.createPatient(patient);
 
         model.addAttribute("titulo","Ingreso de cita");
         model.addAttribute("appointment",appointment);

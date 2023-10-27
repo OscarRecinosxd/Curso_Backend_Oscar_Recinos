@@ -23,20 +23,19 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
+    <tr th:each="appointment: ${appointments}">
         <td th:text="${appointment.day}"></td>
         <td th:text="${appointment.time}"></td>
-        <td th:text="${patient.name}"></td>
-        <td th:text="${patient.lastName}"></td>
-        <td th:text="${address.address1}"></td>
-        <td th:text="${address.address2}"></td>
-        <td th:text="${address.city}"></td>
-        <td th:text="${address.region}"></td>
-        <td th:text="${address.zip}"></td>
-        <td th:text="${patient.birthday}"></td>
+        <td th:text="${appointment.patient.name}"></td>
+        <td th:text="${appointment.patient.lastName}"></td>
+        <td th:text="${appointment.patient.address.address1}"></td>
+        <td th:text="${appointment.patient.address.address2}"></td>
+        <td th:text="${appointment.patient.address.city}"></td>
+        <td th:text="${appointment.patient.address.region}"></td>
+        <td th:text="${appointment.patient.address.zip}"></td>
+        <td th:text="${appointment.patient.birthday}"></td>
     </tr>
     </tbody>
 </table>
-<a href="/getappointments" type="submit" class="btn btn-primary">Ir a la lista de appointments</a>
 </body>
 </html>

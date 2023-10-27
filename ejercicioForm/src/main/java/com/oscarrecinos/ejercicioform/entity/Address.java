@@ -2,6 +2,7 @@ package com.oscarrecinos.ejercicioform.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import org.hibernate.validator.constraints.Length;
 
 import javax.swing.*;
 
@@ -20,9 +21,11 @@ public class Address {
     @NotBlank(message = "No debe ser vacio")
     private String region;
     @NotBlank(message = "No debe ser vacio")
+
+    @Length(min = 1,max = 5,message = "El zip tiene que tener entre 0 y 5")
     private String zip;
 
-    @ManyToOne
+    @OneToOne
     private Patient patient;
 
     public Address() {

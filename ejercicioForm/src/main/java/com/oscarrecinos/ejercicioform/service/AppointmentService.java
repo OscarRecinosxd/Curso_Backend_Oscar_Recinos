@@ -7,6 +7,8 @@ import com.oscarrecinos.ejercicioform.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AppointmentService {
     @Autowired
@@ -18,5 +20,9 @@ public class AppointmentService {
 
     public Appointment findById(Long id){
         return appointmentRepository.findById(id).orElse(null);
+    }
+
+    public List<Appointment> findAll(){
+        return appointmentRepository.findAll();
     }
 }

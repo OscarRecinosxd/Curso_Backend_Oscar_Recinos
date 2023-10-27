@@ -8,6 +8,7 @@ import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="patients")
@@ -24,6 +25,10 @@ public class Patient {
     @NotNull(message ="Ingresa una fecha de nacimiento")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthday;
+
+    @OneToOne
+    private Address Address;
+
 
 
     public Patient() {
@@ -59,6 +64,13 @@ public class Patient {
 
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
+    }
+    public com.oscarrecinos.ejercicioform.entity.Address getAddress() {
+        return Address;
+    }
+
+    public void setAddress(com.oscarrecinos.ejercicioform.entity.Address address) {
+        Address = address;
     }
 
 }
