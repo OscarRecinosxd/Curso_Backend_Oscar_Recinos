@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+
+<header th:replace="layout/layout :: header"></header>
+
+
+<div class="container">
+    <main>
+        <div class="py-5 text-center">
+            <h2>Formulario de compra</h2>
+        </div>
+        <div class="row g-7 justify-content-center">
+            <div class="col-md-8 col-lg-4 order-md-last">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-primary">Tu carrito</span>
+                    <span class="badge bg-primary rounded-pill">3</span>
+                </h4>
+
+                <table th:replace="factura/plantilla-items :: itemsFactura"></table>
+
+                <table id="cargarItemProductos"
+                       class="table table-sm table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                        <th>Eliminar</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <h5>Total <span class="badge badge-secondary" id="gran_total">0</span></h5>
+
+
+            </div>
+
+
+            <div class="col-md-7 col-lg-8">
+                <h4 class="mb-3">Dirección de facturación</h4>
+                <form class="needs-validation" th:action="@{/factura/form/}" th:object="${factura}"
+                      method="post">
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+
+                            <label for="cliente" class="form-label">Cliente</label>
+                            <input name="cliente"
+                                   th:value="${factura.cliente.nombre} + ' ' + ${factura.cliente.apellido}"
+                                   class="form-control" id="cliente" disabled='disabled'/>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="username" class="form-label">Nombre de usuario</label>
+                            <div class="input-group has-validation">
+                                <span class="input-group-text">@</span>
+                                <input type="text" class="form-control" id="username" placeholder="Nombre de usuario"
+                                       required
+                                       th:field="*{username}">
+                                <div class="invalid-feedback">
+                                    Se requiere un nombre de usuario.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="email" class="form-label">Correo electrónico <span
+                                    class="text-muted">(Opcional)</span></label>
+                            <input type="email" class="form-control" id="email" placeholder="you@example.com"
+                                   th:field="*{email}">
+                            <div class="invalid-feedback">
+                                Por favor, ingresa una dirección de correo electrónico válida para recibir
+                                actualizaciones de envío.
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="address" class="form-label">Dirección</label>
+                            <input type="text" class="form-control" id="address" placeholder="1234 Calle Principal"
+                                   required
+                                   th:field="*{direccion}">
+                            <div class="invalid-feedback">
+                                Por favor, ingresa tu dirección de envío.
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="buscar_producto" class="form-label">Buscar producto</label>
+
+                            <input type="text" name="buscar_producto" id="buscar_producto"
+                                   class="form-control"/>
+
+                        </div>
+
+                    </div>
+
+                    <hr class="my-4">
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">Continuar con la compra</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+<footer th:replace="layout/layout :: footer"></footer>
+<script th:replace="factura/js/autocomplete-productos :: javascript"></script>
+
+</body>
+</html>
